@@ -1,0 +1,10 @@
+Irony Detection with Nerual Network
+- Run cross validation of a particular fold
+python nn.py task fold vocab_size num_epochs hidden_dim learning_rate batch_size
+example:
+python nn.py taskA 1 100 20 3 0.005 32
+- Train on entire training set with selected set of hyperparameters and run on test data
+for task A:
+python nn.py test taskA
+for task B:
+python nn.py test taskB
