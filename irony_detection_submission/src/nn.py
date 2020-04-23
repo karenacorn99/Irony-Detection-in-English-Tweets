@@ -323,18 +323,18 @@ if __name__ == "__main__":
             config['hidden_dim'] = 4
             config['learning_rate'] = 0.005
             config['batch_size'] = 32
-            config['train_file'] = "../data/taskA/train_taskA.csv"
-            config['test_file'] = "../data/taskA/test_taskA.csv"
+            config['train_file'] = "../data/train_taskA.csv"
+            config['test_file'] = "../data/test_taskA.csv"
         elif task == 'taskB':
             # best set of parameters found using cross validation for taskB
             config['task'] = 'taskB'
-            config['vocab_size'] = 1200
-            config['num_epochs'] = 4
-            config['hidden_dim'] = 2
-            config['learning_rate'] = 0.003
-            config['batch_size'] = 8
-            config['train_file'] = "../data/taskB/train_taskB.csv"
-            config['test_file'] = "../data/taskB/test_taskB.csv"
+            config['vocab_size'] = 100
+            config['num_epochs'] = 20
+            config['hidden_dim'] = 3
+            config['learning_rate'] = 0.005
+            config['batch_size'] = 32
+            config['train_file'] = "../data/train_taskB.csv"
+            config['test_file'] = "../data/test_taskB.csv"
         run_test(config)
     else:
         # python nn.py task fold vocab_size num_epochs hidden_dim learning_rate batch_size
@@ -348,7 +348,7 @@ if __name__ == "__main__":
         config['learning_rate'] = float(arguments[5])
         config['batch_size'] = int(arguments[6])
         if config['task'] == 'taskA':
-            config['data_file'] = "../data/taskA/train_taskA.csv"
+            config['data_file'] = "../data/train_taskA.csv"
         elif config['task'] == 'taskB':
-            config['data_file'] = "../data/taskB/train_taskB.csv"
+            config['data_file'] = "../data/train_taskB.csv"
         run_training_loop(config)
